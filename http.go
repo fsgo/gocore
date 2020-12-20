@@ -62,7 +62,7 @@ type HTTPResponse interface {
 
 var _ HTTPResponse = (*http.Response)(nil)
 
-// HTTPTransport interface off *http.Transport
+// HTTPTransport interface of *http.Transport
 type HTTPTransport interface {
 	CancelRequest(req *http.Request)
 	Clone() *http.Transport
@@ -73,7 +73,7 @@ type HTTPTransport interface {
 
 var _ HTTPTransport = (*http.Transport)(nil)
 
-// HTTPServer interface off *http.Server
+// HTTPServer interface of *http.Server
 type HTTPServer interface {
 	Close() error
 	ListenAndServe() error
@@ -87,7 +87,7 @@ type HTTPServer interface {
 
 var _ HTTPServer = (*http.Server)(nil)
 
-// HTTPServeMux  interface off *http.ServeMux
+// HTTPServeMux  interface of *http.ServeMux
 type HTTPServeMux interface {
 	Handle(pattern string, handler http.Handler)
 	HandleFunc(pattern string, handler func(http.ResponseWriter, *http.Request))

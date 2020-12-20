@@ -14,7 +14,7 @@ import (
 
 var _ SQLDB = (*sql.DB)(nil)
 
-// SQLDBContexter interface off *Sql.DB
+// SQLDBContexter interface of *Sql.DB
 type SQLDBContexter interface {
 	PingContext(ctx context.Context) error
 	PrepareContext(ctx context.Context, query string) (*sql.Stmt, error)
@@ -57,7 +57,7 @@ type SQLBeginTx interface {
 	BeginTx(ctx context.Context, opts *sql.TxOptions) (*sql.Tx, error)
 }
 
-// SQLDBNoContexter interface off *Sql.DB
+// SQLDBNoContexter interface of *Sql.DB
 type SQLDBNoContexter interface {
 	Ping() error
 	Prepare(query string) (*sql.Stmt, error)
@@ -126,7 +126,7 @@ type SQLRows interface {
 
 var _ SQLRows = (*sql.Rows)(nil)
 
-// SQLColumnType interface off *sql.ColumnType
+// SQLColumnType interface of *sql.ColumnType
 type SQLColumnType interface {
 	DatabaseTypeName() string
 	DecimalSize() (precision, scale int64, ok bool)

@@ -12,7 +12,7 @@ import (
 	"sync"
 )
 
-// BytesBuffer interface off *bytes.Buffer
+// BytesBuffer interface of *bytes.Buffer
 type BytesBuffer interface {
 	Bytes() []byte
 	Cap() int
@@ -39,7 +39,7 @@ type BytesBuffer interface {
 
 var _ BytesBuffer = (*bytes.Buffer)(nil)
 
-// BytesReader interface for *bytes.Reader
+// BytesReader interface  *bytes.Reader
 type BytesReader interface {
 	Len() int
 	Read(b []byte) (n int, err error)

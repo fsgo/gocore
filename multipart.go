@@ -14,7 +14,7 @@ import (
 
 var _ MultiPartReader = (*multipart.Reader)(nil)
 
-// MultiPartWriter interface off *multipart.Writer
+// MultiPartWriter interface of *multipart.Writer
 type MultiPartWriter interface {
 	Boundary() string
 	Close() error
@@ -28,7 +28,7 @@ type MultiPartWriter interface {
 
 var _ MultiPartWriter = (*multipart.Writer)(nil)
 
-// MultiPartPart interface off *multipart.Part
+// MultiPartPart interface of *multipart.Part
 type MultiPartPart interface {
 	Close() error
 	FileName() string

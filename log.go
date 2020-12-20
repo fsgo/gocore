@@ -12,7 +12,7 @@ import (
 	"log/syslog"
 )
 
-// LogLogger interface off *log.Logger
+// LogLogger interface of *log.Logger
 type LogLogger interface {
 	Fatal(v ...interface{})
 	Fatalf(format string, v ...interface{})
@@ -54,7 +54,7 @@ type LogFatalf interface {
 	Fatalf(format string, v ...interface{})
 }
 
-// SysLogWriter interface off *syslog.Writer
+// SysLogWriter interface of *syslog.Writer
 type SysLogWriter interface {
 	Alert(m string) error
 	Close() error

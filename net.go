@@ -15,7 +15,7 @@ import (
 	"time"
 )
 
-// NetIPConn interface off *net.IPConn
+// NetIPConn interface of *net.IPConn
 type NetIPConn interface {
 	Close() error
 	File() (f *os.File, err error)
@@ -39,7 +39,7 @@ type NetIPConn interface {
 
 var _ NetIPConn = (*net.IPConn)(nil)
 
-// NetListenConfig interface off *net.ListenConfig
+// NetListenConfig interface of *net.ListenConfig
 type NetListenConfig interface {
 	Listen(ctx context.Context, network, address string) (net.Listener, error)
 	ListenPacket(ctx context.Context, network, address string) (net.PacketConn, error)
@@ -47,7 +47,7 @@ type NetListenConfig interface {
 
 var _ NetListenConfig = (*net.ListenConfig)(nil)
 
-// NetOpError interface off *net.OpError
+// NetOpError interface of *net.OpError
 type NetOpError interface {
 	Error() string
 	Temporary() bool
@@ -57,7 +57,7 @@ type NetOpError interface {
 
 var _ NetOpError = (*net.OpError)(nil)
 
-// NetTCPConn interface off *net.TCPConn
+// NetTCPConn interface of *net.TCPConn
 type NetTCPConn interface {
 	Close() error
 	CloseRead() error
@@ -82,7 +82,7 @@ type NetTCPConn interface {
 
 var _ NetTCPConn = (*net.TCPConn)(nil)
 
-// NetTCPListener interface off *net.TCPListener
+// NetTCPListener interface of *net.TCPListener
 type NetTCPListener interface {
 	Accept() (net.Conn, error)
 	AcceptTCP() (*net.TCPConn, error)
@@ -95,7 +95,7 @@ type NetTCPListener interface {
 
 var _ NetTCPListener = (*net.TCPListener)(nil)
 
-// NetUDPConn interface off *net.UDPConn
+// NetUDPConn interface of *net.UDPConn
 type NetUDPConn interface {
 	Close() error
 	File() (f *os.File, err error)
@@ -119,7 +119,7 @@ type NetUDPConn interface {
 
 var _ NetUDPConn = (*net.UDPConn)(nil)
 
-// NetUnixConn interface off *net.UnixConn
+// NetUnixConn interface of *net.UnixConn
 type NetUnixConn interface {
 	Close() error
 	CloseRead() error
@@ -145,7 +145,7 @@ type NetUnixConn interface {
 
 var _ NetUnixConn = (*net.UnixConn)(nil)
 
-// NetUnixListener interface off *net.UnixListener
+// NetUnixListener interface of *net.UnixListener
 type NetUnixListener interface {
 	Accept() (net.Conn, error)
 	AcceptUnix() (*net.UnixConn, error)

@@ -11,7 +11,7 @@ import (
 	"io"
 )
 
-// BufIOReader interface off *bufio.Reader
+// BufIOReader interface of *bufio.Reader
 type BufIOReader interface {
 	Buffered() int
 	Discard(n int) (discarded int, err error)
@@ -32,7 +32,7 @@ type BufIOReader interface {
 
 var _ BufIOReader = (*bufio.Reader)(nil)
 
-// BufIOScanner interface off *bufio.Scanner
+// BufIOScanner interface of *bufio.Scanner
 type BufIOScanner interface {
 	Buffer(buf []byte, max int)
 	Bytes() []byte
@@ -44,7 +44,7 @@ type BufIOScanner interface {
 
 var _ BufIOScanner = (*bufio.Scanner)(nil)
 
-// BufIOWriter interface off *bufio.Writer
+// BufIOWriter interface of *bufio.Writer
 type BufIOWriter interface {
 	Available() int
 	Buffered() int

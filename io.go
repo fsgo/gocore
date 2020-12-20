@@ -10,7 +10,7 @@ import (
 	"io"
 )
 
-// IOPipeReader interface off *io.PipeReader
+// IOPipeReader interface of *io.PipeReader
 type IOPipeReader interface {
 	Close() error
 	CloseWithError(err error) error
@@ -19,7 +19,7 @@ type IOPipeReader interface {
 
 var _ IOPipeReader = (*io.PipeReader)(nil)
 
-// IOPipeWriter interface off *io.PipeWriter
+// IOPipeWriter interface of *io.PipeWriter
 type IOPipeWriter interface {
 	Close() error
 	CloseWithError(err error) error
@@ -28,7 +28,7 @@ type IOPipeWriter interface {
 
 var _ IOPipeWriter = (*io.PipeWriter)(nil)
 
-// IOSectionReader interface off *io.SectionReader
+// IOSectionReader interface of *io.SectionReader
 type IOSectionReader interface {
 	Read(p []byte) (n int, err error)
 	ReadAt(p []byte, off int64) (n int, err error)

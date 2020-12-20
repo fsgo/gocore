@@ -32,7 +32,7 @@ type SetReadWriteDeadline interface {
 	SetWriteDeadline(t time.Time) error
 }
 
-// OsProcess interface off *os.Process
+// OsProcess interface of *os.Process
 type OsProcess interface {
 	Kill() error
 	Release() error
@@ -42,7 +42,7 @@ type OsProcess interface {
 
 var _ OsProcess = (*os.Process)(nil)
 
-// OsProcessState interface off *os.ProcessState
+// OsProcessState interface of *os.ProcessState
 type OsProcessState interface {
 	ExitCode() int
 	Exited() bool
