@@ -9,6 +9,8 @@
 package gocore
 
 import (
+	"encoding/json"
+	"io"
 	"mime/multipart"
 )
 
@@ -16,4 +18,14 @@ import (
 type MultiPartReader interface {
 	NextPart() (*multipart.Part, error)
 	ReadForm(maxMemory int64) (*multipart.Form, error)
+}
+
+// JSONDecoder interface of *json.Decoder
+type JSONDecoder interface {
+	Buffered() io.Reader
+	Decode(v interface{}) error
+	DisallowUnknownFields()
+	More() bool
+	Token() (json.Token, error)
+	UseNumber()
 }

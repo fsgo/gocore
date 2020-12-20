@@ -49,7 +49,7 @@ type nopWriteCloser struct {
 
 func (nopWriteCloser) Close() error { return nil }
 
-// Flush flush
-type Flush interface {
+// Flusher flush
+type Flusher interface {
 	Flush() error
 }

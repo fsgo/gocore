@@ -1,4 +1,4 @@
-// +build go1.15
+// +build !go1.13,!go1.14
 
 /*
  * Copyright(C) 2020 github.com/hidu  All Rights Reserved.

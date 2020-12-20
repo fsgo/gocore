@@ -63,3 +63,7 @@ type Kill interface {
 }
 
 var _ OsFile = (*os.File)(nil)
+
+type FileInfo interface {
+	FileInfo() os.FileInfo
+}
