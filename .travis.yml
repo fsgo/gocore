@@ -1,0 +1,8 @@
+language: go
+
+go:
+  - "1.13"
+  - "1.14"
+  - "1.15"
+
+script: go get github.com/fsgo/gocore && go test -race -cover ./...
