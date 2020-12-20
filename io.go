@@ -48,3 +48,8 @@ type nopWriteCloser struct {
 }
 
 func (nopWriteCloser) Close() error { return nil }
+
+// Flush flush
+type Flush interface {
+	Flush() error
+}

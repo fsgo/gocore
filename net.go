@@ -160,3 +160,23 @@ type NetUnixListener interface {
 var _ NetUnixListener = (*net.UnixListener)(nil)
 
 var _ NetResolver = (*net.Resolver)(nil)
+
+// NetAccept accept net conn
+type NetAccept interface {
+	Accept() (net.Conn, error)
+}
+
+// Serve serve Listener
+type Serve interface {
+	Serve(l net.Listener) error
+}
+
+// ServeTLS ServeTLS
+type ServeTLS interface {
+	ServeTLS(l net.Listener, certFile, keyFile string) error
+}
+
+// ShutdownContext shutdown
+type ShutdownContext interface {
+	Shutdown(ctx context.Context) error
+}

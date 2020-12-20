@@ -11,8 +11,6 @@ import (
 	"time"
 )
 
-var _ OsFile = (*os.File)(nil)
-
 // SetDeadline can set deadline
 type SetDeadline interface {
 	SetDeadline(t time.Time) error
@@ -58,3 +56,10 @@ type OsProcessState interface {
 }
 
 var _ OsProcessState = (*os.ProcessState)(nil)
+
+// Kill kill
+type Kill interface {
+	Kill() error
+}
+
+var _ OsFile = (*os.File)(nil)

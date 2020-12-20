@@ -4,5 +4,5 @@
 [![GoCover](https://gocover.io/_badge/github.com/fsgo/gocore)](https://gocover.io/github.com/fsgo/gocore)
 [![GoDoc](https://godoc.org/github.com/fsgo/gocore?status.svg)](https://godoc.org/github.com/fsgo/gocore)
 
-go version: >= g1.13
+go version >= g1.13
 

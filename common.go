@@ -46,3 +46,18 @@ type ResetErr interface {
 type Truncate interface {
 	Truncate(n int)
 }
+
+// Name name
+type Name interface {
+	Name() string
+}
+
+// Sync sync
+type Sync interface {
+	Sync() error
+}
+
+// Release release
+type Release interface {
+	Release() error
+}

@@ -24,6 +24,39 @@ type SQLDBContexter interface {
 	BeginTx(ctx context.Context, opts *sql.TxOptions) (*sql.Tx, error)
 }
 
+// SQLPingContext Ping with Context
+type SQLPingContext interface {
+	PingContext(ctx context.Context) error
+}
+
+// PingContext Ping with Context
+type PingContext = SQLPingContext
+
+// SQLPrepareContext Prepare with Context
+type SQLPrepareContext interface {
+	PrepareContext(ctx context.Context, query string) (*sql.Stmt, error)
+}
+
+// SQLExecContext Exec with Context
+type SQLExecContext interface {
+	ExecContext(ctx context.Context, query string, args ...interface{}) (sql.Result, error)
+}
+
+// SQLQueryContext Query with Context
+type SQLQueryContext interface {
+	QueryContext(ctx context.Context, query string, args ...interface{}) (*sql.Rows, error)
+}
+
+// SQLQueryRowContext  QueryRow with Context
+type SQLQueryRowContext interface {
+	QueryRowContext(ctx context.Context, query string, args ...interface{}) *sql.Row
+}
+
+// SQLBeginTx  BeginTx
+type SQLBeginTx interface {
+	BeginTx(ctx context.Context, opts *sql.TxOptions) (*sql.Tx, error)
+}
+
 // SQLDBNoContexter interface off *Sql.DB
 type SQLDBNoContexter interface {
 	Ping() error
@@ -31,6 +64,39 @@ type SQLDBNoContexter interface {
 	Exec(query string, args ...interface{}) (sql.Result, error)
 	Query(query string, args ...interface{}) (*sql.Rows, error)
 	QueryRow(query string, args ...interface{}) *sql.Row
+	Begin() (*sql.Tx, error)
+}
+
+// SQLPing  ping
+type SQLPing interface {
+	Ping() error
+}
+
+// Ping ping
+type Ping = SQLPing
+
+// SQLPrepare Prepare
+type SQLPrepare interface {
+	Prepare(query string) (*sql.Stmt, error)
+}
+
+// SQLExec exec
+type SQLExec interface {
+	Exec(query string, args ...interface{}) (sql.Result, error)
+}
+
+// SQLQuery query
+type SQLQuery interface {
+	Query(query string, args ...interface{}) (*sql.Rows, error)
+}
+
+// SQLQueryRow QueryRow
+type SQLQueryRow interface {
+	QueryRow(query string, args ...interface{}) *sql.Row
+}
+
+// SQLBegin begin tx
+type SQLBegin interface {
 	Begin() (*sql.Tx, error)
 }
 
@@ -105,3 +171,24 @@ type SQLTx interface {
 var _ SQLTx = (*sql.Tx)(nil)
 
 var _ SQLRow = (*sql.Row)(nil)
+
+// Commit commit
+type Commit interface {
+	Commit() error
+}
+
+// SQLCommit  commit
+type SQLCommit = Commit
+
+// Rollback rollback
+type Rollback interface {
+	Rollback() error
+}
+
+// SQLRollback Rollback
+type SQLRollback = Rollback
+
+// SQLStmtContext Stmt with Context
+type SQLStmtContext interface {
+	StmtContext(ctx context.Context, stmt *sql.Stmt) *sql.Stmt
+}
