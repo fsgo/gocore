@@ -12,13 +12,6 @@ import (
 	"net/textproto"
 )
 
-// MultiPartReader interface off *multipart.Reader
-type MultiPartReader interface {
-	NextPart() (*multipart.Part, error)
-	NextRawPart() (*multipart.Part, error)
-	ReadForm(maxMemory int64) (*multipart.Form, error)
-}
-
 var _ MultiPartReader = (*multipart.Reader)(nil)
 
 // MultiPartWriter interface off *multipart.Writer

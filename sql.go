@@ -9,25 +9,8 @@ package gocore
 import (
 	"context"
 	"database/sql"
-	"database/sql/driver"
 	"reflect"
-	"time"
 )
-
-// SQLDB interface off *Sql.DB
-type SQLDB interface {
-	SetConnMaxIdleTime(d time.Duration)
-	SetConnMaxLifetime(d time.Duration)
-	SetMaxIdleConns(n int)
-	SetMaxOpenConns(n int)
-	Conn(ctx context.Context) (*sql.Conn, error)
-	Driver() driver.Driver
-	Stats() sql.DBStats
-	Close() error
-
-	SQLDBNoContexter
-	SQLDBContexter
-}
 
 var _ SQLDB = (*sql.DB)(nil)
 
@@ -120,11 +103,5 @@ type SQLTx interface {
 }
 
 var _ SQLTx = (*sql.Tx)(nil)
-
-// SQLRow interface off *sql.Row
-type SQLRow interface {
-	Err() error
-	Scan(dest ...interface{}) error
-}
 
 var _ SQLRow = (*sql.Row)(nil)

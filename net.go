@@ -57,22 +57,6 @@ type NetOpError interface {
 
 var _ NetOpError = (*net.OpError)(nil)
 
-// NetResolver interface off *net.Resolver
-type NetResolver interface {
-	LookupAddr(ctx context.Context, addr string) (names []string, err error)
-	LookupCNAME(ctx context.Context, host string) (cname string, err error)
-	LookupHost(ctx context.Context, host string) (addrs []string, err error)
-	LookupIP(ctx context.Context, network, host string) ([]net.IP, error)
-	LookupIPAddr(ctx context.Context, host string) ([]net.IPAddr, error)
-	LookupMX(ctx context.Context, name string) ([]*net.MX, error)
-	LookupNS(ctx context.Context, name string) ([]*net.NS, error)
-	LookupPort(ctx context.Context, network, service string) (port int, err error)
-	LookupSRV(ctx context.Context, service, proto, name string) (cname string, addrs []*net.SRV, err error)
-	LookupTXT(ctx context.Context, name string) ([]string, error)
-}
-
-var _ NetResolver = (*net.Resolver)(nil)
-
 // NetTCPConn interface off *net.TCPConn
 type NetTCPConn interface {
 	Close() error
@@ -174,3 +158,5 @@ type NetUnixListener interface {
 }
 
 var _ NetUnixListener = (*net.UnixListener)(nil)
+
+var _ NetResolver = (*net.Resolver)(nil)
