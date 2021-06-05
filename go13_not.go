@@ -6,7 +6,7 @@
  * Date: 2020/12/20
  */
 
-package gocorex
+package gocore
 
 import (
 	"mime/multipart"

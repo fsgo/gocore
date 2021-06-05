@@ -1,8 +1,6 @@
-/*
- * Copyright(C) 2020 github.com/hidu  All Rights Reserved.
- * Author: hidu (duv123+git@baidu.com)
- * Date: 2020/12/20
- */
+// Copyright(C) 2020 github.com/hidu  All Rights Reserved.
+// Author: hidu (duv123+git@baidu.com)
+// Date: 2020/12/20
 
 package gocore
 
@@ -166,7 +164,7 @@ type NetAccept interface {
 	Accept() (net.Conn, error)
 }
 
-// Serve serve Listener
+// Serve serve listener
 type Serve interface {
 	Serve(l net.Listener) error
 }
